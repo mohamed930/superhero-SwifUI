@@ -39,6 +39,10 @@ struct SuperHeroView: View {
                     haptic.impactOccurred()
                     isAlertPresented.toggle()
                     
+                    PlaySound.shared.setData(fileName: "chimeup", fileType: "mp3")
+                    PlaySound.shared.playSound()
+                    
+                    
                 } label: {
                     
                     HStack {
