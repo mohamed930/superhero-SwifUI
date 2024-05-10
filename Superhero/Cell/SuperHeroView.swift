@@ -9,17 +9,22 @@ import SwiftUI
 
 struct SuperHeroView: View {
     
-//    private var colors = [Color("ColorHulk01"),Color("ColorHulk02")]
-    
     var model: SuperHeroModel
     
     @State var isAlertPresented = false
+    
+    @State var isImageScale = false
+    @State var isNameOffest = false
+    
+    @State var haptic = UIImpactFeedbackGenerator(style: .heavy)
     
     var body: some View {
         ZStack {
             Image(model.superHeroImageName)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
+                .scaleEffect(isImageScale ? 1 : 0.7)
+                .animation(.easeOut(duration: 0.8), value: isImageScale)
             
             
             VStack {
@@ -31,6 +36,7 @@ struct SuperHeroView: View {
                 
                 Button {
                     // TODO: - must add action.
+                    haptic.impactOccurred()
                     isAlertPresented.toggle()
                     
                 } label: {
@@ -57,13 +63,18 @@ struct SuperHeroView: View {
                 
                 
             } // MARK: - VStack
-            .offset(x: 0, y: 150)
+            .offset(y: isNameOffest ? 150 : 300)
+            .animation(.easeOut(duration: 1.5), value: isNameOffest)
             
         } // MARK: - ZStack
         .frame(width: 350, height: 545, alignment: .center)
         .background(LinearGradient(colors: model.colors, startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(8.0)
         .shadow(radius: 2,x: 2,y: 2)
+        .onAppear {
+            isImageScale = true
+            isNameOffest = true
+        }
     }
 }
 
