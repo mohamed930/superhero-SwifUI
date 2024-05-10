@@ -9,24 +9,29 @@ import SwiftUI
 
 struct SuperHeroView: View {
     
-    private var colors = [Color("ColorHulk01"),Color("ColorHulk02")]
+//    private var colors = [Color("ColorHulk01"),Color("ColorHulk02")]
+    
+    var model: SuperHeroModel
+    
+    @State var isAlertPresented = false
     
     var body: some View {
         ZStack {
-            Image("hulk")
+            Image(model.superHeroImageName)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .aspectRatio(contentMode: .fill)
             
             
             VStack {
                 
-                Text("Hulk")
+                Text(model.superHeroName)
                     .font(.title)
                     .foregroundColor(.white)
                     .fontWeight(.heavy)
                 
                 Button {
                     // TODO: - must add action.
+                    isAlertPresented.toggle()
                     
                 } label: {
                     
@@ -42,9 +47,12 @@ struct SuperHeroView: View {
                     .padding()
                     
                 } // MARK: - Button Label
-                .background(LinearGradient(colors: colors, startPoint: .bottomTrailing, endPoint: .topLeading))
+                .background(LinearGradient(colors: model.colors, startPoint: .bottomTrailing, endPoint: .topLeading))
                 .clipShape(Capsule())
                 .shadow(radius: 10)
+                .alert(isPresented: $isAlertPresented) {
+                    Alert(title: Text(model.superHeroTitleInfo), message: Text(model.superHeroDescribtion), dismissButton: .default(Text("Ok")))
+                }
 
                 
                 
@@ -52,7 +60,8 @@ struct SuperHeroView: View {
             .offset(x: 0, y: 150)
             
         } // MARK: - ZStack
-        .background(LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing))
+        .frame(width: 350, height: 545, alignment: .center)
+        .background(LinearGradient(colors: model.colors, startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(8.0)
         .shadow(radius: 2,x: 2,y: 2)
     }
@@ -60,6 +69,13 @@ struct SuperHeroView: View {
 
 struct SuperHeroView_Previews: PreviewProvider {
     static var previews: some View {
-        SuperHeroView()
+
+        let superhero = SuperHeroModel(superHeroName: "Hulk",
+                                       superHeroImageName: "hulk",
+                                       superHeroTitleInfo: "About hulk",
+                                       superHeroDescribtion: "Hulk is very green",
+                                       colors: [Color("ColorHulk01"),Color("ColorHulk02")])
+        
+        SuperHeroView(model: superhero)
     }
 }
