@@ -13,7 +13,7 @@ struct MainScreen: View {
     
     var body: some View {
         
-        ScrollView(.horizontal) {
+        /*ScrollView(.horizontal) {
             
             HStack {
                 ForEach(superHerosArr.indices, id: \.self) { index in
@@ -23,6 +23,19 @@ struct MainScreen: View {
             
         } // MARK: - ScrollView
         .padding(20)
+        .onAppear {
+            fetchSuperHeroData()
+        }*/
+        
+        TabView {
+            ForEach(superHerosArr.indices, id: \.self) { index in
+                    SuperHeroView(model: superHerosArr[index])
+                }
+        }
+        .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(
+            PageIndexViewStyle(backgroundDisplayMode: .never))
+        .padding(10)
         .onAppear {
             fetchSuperHeroData()
         }
