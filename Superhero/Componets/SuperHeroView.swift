@@ -43,7 +43,8 @@ struct SuperHeroView: View {
                     PlaySound.shared.playSound()
                     
                     
-                } label: {
+                }
+                label: {
                     
                     HStack {
                         Text("Start")

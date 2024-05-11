@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3C73D0A2BEF72A800FF69DC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C73D092BEF72A800FF69DC /* Launch Screen.storyboard */; };
 		D3EAF4872BEE72A500B2E465 /* SuperheroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAF4862BEE72A500B2E465 /* SuperheroApp.swift */; };
 		D3EAF4892BEE72A500B2E465 /* SuperHeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAF4882BEE72A500B2E465 /* SuperHeroView.swift */; };
 		D3EAF48B2BEE72A700B2E465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EAF48A2BEE72A700B2E465 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D3C73D092BEF72A800FF69DC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D3EAF4832BEE72A500B2E465 /* Superhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Superhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EAF4862BEE72A500B2E465 /* SuperheroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroApp.swift; sourceTree = "<group>"; };
 		D3EAF4882BEE72A500B2E465 /* SuperHeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroView.swift; sourceTree = "<group>"; };
@@ -40,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3C73D0B2BEF72FD00FF69DC /* Launch screen */ = {
+			isa = PBXGroup;
+			children = (
+				D3C73D092BEF72A800FF69DC /* Launch Screen.storyboard */,
+			);
+			path = "Launch screen";
+			sourceTree = "<group>";
+		};
 		D3EAF47A2BEE72A500B2E465 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +69,7 @@
 		D3EAF4852BEE72A500B2E465 /* Superhero */ = {
 			isa = PBXGroup;
 			children = (
+				D3C73D0B2BEF72FD00FF69DC /* Launch screen */,
 				D3EAF4982BEE7E0F00B2E465 /* view */,
 				D3EAF4942BEE7DA400B2E465 /* Models */,
 				D3EAF4972BEE7E0600B2E465 /* Componets */,
@@ -179,6 +190,7 @@
 			files = (
 				D3EAF4A02BEE9F0400B2E465 /* chimeup.mp3 in Resources */,
 				D3EAF48E2BEE72A700B2E465 /* Preview Assets.xcassets in Resources */,
+				D3C73D0A2BEF72A800FF69DC /* Launch Screen.storyboard in Resources */,
 				D3EAF48B2BEE72A700B2E465 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +341,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -362,6 +375,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
